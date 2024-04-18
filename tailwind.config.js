@@ -2,7 +2,11 @@
 export default {
   content: ["./src/**/*.{js,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter var", "Inter", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
