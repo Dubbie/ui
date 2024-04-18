@@ -13,7 +13,9 @@ onUpdated(() => {
 </script>
 
 <template>
-  <div class="border-b border-black/5">
+  <div
+    class="border-b border-black/5 fixed inset-x-0 h-16 bg-white/60 backdrop-blur"
+  >
     <header class="flex items-center gap-x-8 max-w-7xl mx-auto py-3">
       <div>
         <p class="font-bold">Subi/ui</p>
