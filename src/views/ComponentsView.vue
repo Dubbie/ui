@@ -2,6 +2,6 @@
 
 <template>
   <main>
-    <p>home</p>
+    <p>components</p>
   </main>
 </template>
