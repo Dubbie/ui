@@ -16,8 +16,9 @@ const toggleAccordion = inject("toggleAccordion");
 <template>
   <div class="border-b border-zinc-200 overflow-hidden transition-all">
     <div
-      class="flex justify-between items-center text-sm font-medium py-4 cursor-pointer hover:underline"
+      class="flex justify-between items-center text-sm font-semibold py-4 cursor-pointer hover:underline"
       @click="toggleAccordion(index)"
+      :aria-expanded="isActive(index)"
     >
       <div>
         <slot name="trigger" />
