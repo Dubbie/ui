@@ -38,7 +38,7 @@ const icon = computed(() => {
 
 <template>
   <div
-    class="flex gap-x-4 border rounded-lg py-3 px-4"
+    class="flex w-full gap-x-4 border rounded-lg py-3 px-4"
     :class="containerClasses"
   >
     <div>
