@@ -7,6 +7,7 @@ import SUTabsContent from "@/components/ui/SUTabsContent.vue";
 import SUTabsList from "@/components/ui/SUTabsList.vue";
 import SUTabsTrigger from "@/components/ui/SUTabsTrigger.vue";
 import AppCodeBlock from "@/components/AppCodeBlock.vue";
+import SectionHeading from "@/components/SectionHeading.vue";
 
 const getCodeSample = () => {
   let codeSample = `<script setup>
@@ -47,5 +48,32 @@ const getCodeSample = () => {
         <AppCodeBlock :code="getCodeSample()" />
       </SUTabsContent>
     </SUTabs>
+
+    <div class="mt-10">
+      <SectionHeading>Examples</SectionHeading>
+
+      <div class="flex flex-col gap-y-6">
+        <div>
+          <p class="font-semibold mb-2">Danger</p>
+          <SUAlert type="danger" title="Danger!">
+            <p>This is an example alert with the danger type.</p>
+          </SUAlert>
+        </div>
+
+        <div>
+          <p class="font-semibold mb-2">Success</p>
+          <SUAlert type="success" title="Success!">
+            <p>This is an example alert with the success type.</p>
+          </SUAlert>
+        </div>
+
+        <div>
+          <p class="font-semibold mb-2">Warning</p>
+          <SUAlert type="warning" title="Warning!">
+            <p>This is an example alert with the warning type.</p>
+          </SUAlert>
+        </div>
+      </div>
+    </div>
   </ComponentDetails>
 </template>
