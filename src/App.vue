@@ -4,6 +4,10 @@ import NavigationBar from "@/components/NavigationBar.vue";
 </script>
 
 <template>
-  <NavigationBar :key="$route.path" />
-  <RouterView />
+  <div class="flex flex-col min-h-dvh">
+    <NavigationBar :key="$route.path" />
+    <div class="max-w-7xl w-full mx-auto flex flex-1">
+      <RouterView />
+    </div>
+  </div>
 </template>

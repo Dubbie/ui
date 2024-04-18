@@ -22,6 +22,11 @@ const router = createRouter({
       name: "components",
       component: () => import("../views/ComponentsView.vue"),
     },
+    {
+      path: "/components/accordion",
+      name: "components.accordion",
+      component: () => import("../views/components/AccordionView.vue"),
+    },
   ],
 });
 
