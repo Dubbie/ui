@@ -1,45 +1,60 @@
 <script setup>
 import AppPreview from "@/components/AppPreview.vue";
 import ComponentDetails from "@/components/ComponentDetails.vue";
-import SUAccordion from "@/components/shared/SUAccordion.vue";
-import SUAccordionItem from "@/components/shared/SUAccordionItem.vue";
-import SUTabs from "@/components/shared/SUTabs.vue";
-import SUTabsContent from "@/components/shared/SUTabsContent.vue";
-import SUTabsList from "@/components/shared/SUTabsList.vue";
-import SUTabsTrigger from "@/components/shared/SUTabsTrigger.vue";
+import SUAccordion from "@/components/ui/SUAccordion.vue";
+import SUAccordionItem from "@/components/ui/SUAccordionItem.vue";
+import SUTabs from "@/components/ui/SUTabs.vue";
+import SUTabsContent from "@/components/ui/SUTabsContent.vue";
+import SUTabsList from "@/components/ui/SUTabsList.vue";
+import SUTabsTrigger from "@/components/ui/SUTabsTrigger.vue";
+import VCodeBlock from "@wdns/vue-code-block";
 
-const codeSample = `<SUAccordion class="w-full">
-  <SUAccordionItem :index="0">
+const accordionItems = [
+  {
+    title: "Is it accessible?",
+    content: "Yes. It adheres to the WAI-ARIA design pattern.",
+  },
+  {
+    title: "Is it styled?",
+    content:
+      "Yes. It comes with default styles that matches the other components' aesthetic.",
+  },
+  {
+    title: "Is it animated?",
+    content: "Yes. It comes with a default animation.",
+  },
+];
+
+let codeSample = `<script setup>
+  import SUAccordion from "@/components/shared/SUAccordion.vue";
+  import SUAccordionItem from "@/components/shared/SUAccordionItem.vue";
+<\/script>`;
+
+for (let i = 0; i < accordionItems.length; i++) {
+  const item = accordionItems[i];
+  item.index = i;
+
+  if (i === 0) {
+    codeSample += "\n\n<template>";
+  } else {
+    codeSample += `\n`;
+  }
+
+  codeSample += `
+  <SUAccordionItem :index="${item.index}">
     <template #trigger>
-      <p>Is it accessible?</p>
+      <p>${item.title}</p>
     </template>
 
     <template #content>
-      <p>Yes. It adheres to the WAI-ARIA design pattern.</p>
+      <p>${item.content}</p>
     </template>
-  </SUAccordionItem>
-  <SUAccordionItem :index="1">
-    <template #trigger>
-      <p>Is it styled?</p>
-    </template>
+  </SUAccordionItem>`;
 
-    <template #content>
-      <p>
-        Yes. It comes with default styles that matches the other
-        components' aesthetic.
-      </p>
-    </template>
-  </SUAccordionItem>
-  <SUAccordionItem :index="2">
-    <template #trigger>
-      <p>Is it animated?</p>
-    </template>
-
-    <template #content>
-      <p>Yes. It comes with a default animation.</p>
-    </template>
-  </SUAccordionItem>
-</SUAccordion>`;
+  if (i === accordionItems.length - 1) {
+    codeSample += "\n</template>";
+  }
+}
 </script>
 
 <template>
@@ -56,34 +71,17 @@ const codeSample = `<SUAccordion class="w-full">
       <SUTabsContent value="preview">
         <AppPreview>
           <SUAccordion class="w-full">
-            <SUAccordionItem :index="0">
+            <SUAccordionItem
+              v-for="item in accordionItems"
+              :key="item.index"
+              :index="item.index"
+            >
               <template #trigger>
-                <p>Is it accessible?</p>
+                <p>{{ item.title }}</p>
               </template>
 
               <template #content>
-                <p>Yes. It adheres to the WAI-ARIA design pattern.</p>
-              </template>
-            </SUAccordionItem>
-            <SUAccordionItem :index="1">
-              <template #trigger>
-                <p>Is it styled?</p>
-              </template>
-
-              <template #content>
-                <p>
-                  Yes. It comes with default styles that matches the other
-                  components' aesthetic.
-                </p>
-              </template>
-            </SUAccordionItem>
-            <SUAccordionItem :index="2">
-              <template #trigger>
-                <p>Is it animated?</p>
-              </template>
-
-              <template #content>
-                <p>Yes. It comes with a default animation.</p>
+                <p>{{ item.content }}</p>
               </template>
             </SUAccordionItem>
           </SUAccordion>
@@ -91,10 +89,19 @@ const codeSample = `<SUAccordion class="w-full">
       </SUTabsContent>
 
       <SUTabsContent value="code">
-        <div class="bg-zinc-800 text-white px-6 py-4 rounded-lg">
-          <pre><code>{{ codeSample}}</code></pre>
-        </div>
+        <!-- <div class="bg-zinc-800 text-white px-6 py-4 rounded-lg"> -->
+        <!--   <pre><code>{{ codeSample}}</code></pre> -->
+        <!-- </div> -->
+
+        <VCodeBlock
+          language="html"
+          highlightjs
+          max-height="400px"
+          :code="codeSample"
+          theme="github-dark"
+        />
       </SUTabsContent>
     </SUTabs>
   </ComponentDetails>
 </template>
+@@/components/ui/SUAccordion.vue@/components/ui/SUAccordionItem.vue@/components/ui/SUTabsContent.vue@/components/ui/SUTabsList.vue/components/ui/SUTabsTrigger.vue

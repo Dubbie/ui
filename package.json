@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tabler/icons-vue": "^3.2.0",
+    "@wdns/vue-code-block": "^2.3.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
