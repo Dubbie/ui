@@ -27,6 +27,11 @@ const router = createRouter({
       name: "components.accordion",
       component: () => import("../views/components/AccordionView.vue"),
     },
+    {
+      path: "/components/alert",
+      name: "components.alert",
+      component: () => import("../views/components/AlertView.vue"),
+    },
   ],
 });
 

@@ -14,7 +14,7 @@ const isActive = computed(() => {
 <template>
   <RouterLink
     :to="to"
-    class="rounded-lg py-2 font-medium"
+    class="rounded-lg py-0.5 font-medium"
     :class="{
       'text-zinc-800': isActive,
       'text-zinc-400 hover:text-zinc-600': !isActive,
