@@ -7,7 +7,7 @@ import SUTabs from "@/components/ui/SUTabs.vue";
 import SUTabsContent from "@/components/ui/SUTabsContent.vue";
 import SUTabsList from "@/components/ui/SUTabsList.vue";
 import SUTabsTrigger from "@/components/ui/SUTabsTrigger.vue";
-import VCodeBlock from "@wdns/vue-code-block";
+import AppCodeBlock from "@/components/AppCodeBlock.vue";
 
 const accordionItems = [
   {
@@ -89,19 +89,8 @@ for (let i = 0; i < accordionItems.length; i++) {
       </SUTabsContent>
 
       <SUTabsContent value="code">
-        <!-- <div class="bg-zinc-800 text-white px-6 py-4 rounded-lg"> -->
-        <!--   <pre><code>{{ codeSample}}</code></pre> -->
-        <!-- </div> -->
-
-        <VCodeBlock
-          language="html"
-          highlightjs
-          max-height="400px"
-          :code="codeSample"
-          theme="github-dark"
-        />
+        <AppCodeBlock :code="codeSample" />
       </SUTabsContent>
     </SUTabs>
   </ComponentDetails>
 </template>
-@@/components/ui/SUAccordion.vue@/components/ui/SUAccordionItem.vue@/components/ui/SUTabsContent.vue@/components/ui/SUTabsList.vue/components/ui/SUTabsTrigger.vue
