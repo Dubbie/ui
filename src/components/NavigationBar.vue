@@ -3,8 +3,12 @@ import NavLink from "@/components/NavLink.vue";
 import { onUpdated, ref } from "vue";
 
 const currentUrl = ref(window.location.pathname);
-const isActive = (url) => {
-  return url === currentUrl.value;
+const isActive = (path) => {
+  if (path.indexOf("*") !== -1) {
+    return currentUrl.value.includes(path.replace("*", ""));
+  }
+
+  return currentUrl.value === path;
 };
 
 onUpdated(() => {
@@ -22,7 +26,7 @@ onUpdated(() => {
       </div>
       <nav class="flex gap-x-2 items-center text-sm">
         <NavLink to="/" :active="isActive('/')">Home</NavLink>
-        <NavLink to="/components" :active="isActive('/components')"
+        <NavLink to="/components/accordion" :active="isActive('/components/*')"
           >Components</NavLink
         >
       </nav>

@@ -18,11 +18,6 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: "/components",
-      name: "components",
-      component: () => import("../views/ComponentsView.vue"),
-    },
-    {
       path: "/components/accordion",
       name: "components.accordion",
       component: () => import("../views/components/AccordionView.vue"),
