@@ -8,7 +8,7 @@ import SUTabsList from "@/components/ui/SUTabsList.vue";
 import SUTabsTrigger from "@/components/ui/SUTabsTrigger.vue";
 import AppCodeBlock from "@/components/AppCodeBlock.vue";
 import SectionHeading from "@/components/SectionHeading.vue";
-import { ref } from "vue";
+import SUButton from "@/components/ui/SUButton.vue";
 
 const getCodeSample = () => {
   let codeSample = `<script setup>
@@ -20,8 +20,6 @@ const getCodeSample = () => {
 
   return codeSample;
 };
-
-const mainInput = ref("");
 </script>
 
 <template>
@@ -37,7 +35,7 @@ const mainInput = ref("");
 
       <SUTabsContent value="preview">
         <AppPreview max-width="100%">
-          <SUInput v-model="mainInput" placeholder="Email" type="email" />
+          <SUInput placeholder="Email" type="email" />
         </AppPreview>
       </SUTabsContent>
 
@@ -53,12 +51,17 @@ const mainInput = ref("");
         <div>
           <p class="font-semibold mb-2">Disabled</p>
           <AppPreview max-width="100%" compact>
-            <SUInput
-              v-model="mainInput"
-              placeholder="Email"
-              type="email"
-              disabled
-            />
+            <SUInput placeholder="Email" type="email" disabled />
+          </AppPreview>
+        </div>
+
+        <div>
+          <p class="font-semibold mb-2">With button</p>
+          <AppPreview max-width="100%" compact>
+            <div class="flex gap-x-2">
+              <SUInput placeholder="Email" type="email" />
+              <SUButton>Save</SUButton>
+            </div>
           </AppPreview>
         </div>
       </div>
