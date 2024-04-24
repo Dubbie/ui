@@ -9,6 +9,7 @@ import SUTabsTrigger from "@/components/ui/SUTabsTrigger.vue";
 import AppCodeBlock from "@/components/AppCodeBlock.vue";
 import SectionHeading from "@/components/SectionHeading.vue";
 import SUButton from "@/components/ui/SUButton.vue";
+import SULabel from "@/components/ui/SULabel.vue";
 
 const getCodeSample = () => {
   let codeSample = `<script setup>
@@ -61,6 +62,21 @@ const getCodeSample = () => {
             <div class="flex gap-x-2">
               <SUInput placeholder="Email" type="email" />
               <SUButton>Save</SUButton>
+            </div>
+          </AppPreview>
+        </div>
+
+        <div>
+          <p class="font-semibold mb-2">With label</p>
+          <AppPreview max-width="100%" compact>
+            <div>
+              <SULabel for="email">Email</SULabel>
+              <SUInput
+                id="email"
+                placeholder="Email"
+                type="email"
+                class="block"
+              />
             </div>
           </AppPreview>
         </div>

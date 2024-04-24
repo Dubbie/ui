@@ -42,6 +42,11 @@ const router = createRouter({
       name: "components.input",
       component: () => import("../views/components/InputView.vue"),
     },
+    {
+      path: "/components/label",
+      name: "components.label",
+      component: () => import("../views/components/LabelView.vue"),
+    },
   ],
 });
 
