@@ -32,6 +32,11 @@ const router = createRouter({
       name: "components.alert",
       component: () => import("../views/components/AlertView.vue"),
     },
+    {
+      path: "/components/button",
+      name: "components.button",
+      component: () => import("../views/components/ButtonView.vue"),
+    },
   ],
 });
 

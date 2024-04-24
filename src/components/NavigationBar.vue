@@ -14,7 +14,7 @@ onUpdated(() => {
 
 <template>
   <div
-    class="border-b border-black/5 fixed inset-x-0 h-16 bg-white/60 backdrop-blur"
+    class="border-b border-black/5 fixed z-50 inset-x-0 h-16 bg-white/60 backdrop-blur"
   >
     <header class="flex items-center gap-x-8 max-w-7xl mx-auto py-3">
       <div>

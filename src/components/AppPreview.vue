@@ -18,7 +18,10 @@ const props = defineProps({
       'min-h-[400px]': !props.compact,
     }"
   >
-    <div class="flex-1 flex items-center" :style="{ maxWidth: props.maxWidth }">
+    <div
+      class="flex-1 flex justify-center items-center"
+      :style="{ maxWidth: props.maxWidth }"
+    >
       <slot />
     </div>
   </div>

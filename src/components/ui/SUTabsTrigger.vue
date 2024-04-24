@@ -15,7 +15,7 @@ const isTabActive = inject("isTabActive");
 <template>
   <button
     type="button"
-    class="-mb-px px-3 py-2 font-semibold"
+    class="text-sm -mb-px px-3 py-2 font-medium"
     :class="{
       'border-b-2 border-zinc-800': isTabActive(props.value),
       'text-zinc-400 hover:text-zinc-700': !isTabActive(props.value),
