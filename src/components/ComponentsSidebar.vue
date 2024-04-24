@@ -15,6 +15,7 @@ import SidebarLink from "@/components/SidebarLink.vue";
       <SidebarLink to="/components/accordion">Accordion</SidebarLink>
       <SidebarLink to="/components/alert">Alert</SidebarLink>
       <SidebarLink to="/components/button">Button</SidebarLink>
+      <SidebarLink to="/components/checkbox">Checkbox</SidebarLink>
     </div>
   </div>
 </template>
